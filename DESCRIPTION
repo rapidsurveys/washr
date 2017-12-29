@@ -1,11 +1,20 @@
 Package: washr
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Design, Implementation and Analysis of Urban Water and Sanitation Surveys
+Version: 0.0.0.9000
+Authors@R: as.person(c(
+    "Ernest Guevarra <ernestgmd@gmail.com> [aut, cre]", 
+    "Valid International <office@validinternational.org> [cph]"
+  ))
+Description: Provides the necessary functions that support the design,
+    implementation and analysis of Water and Sanitation for the Urban Poor
+    (WSUP) Urban Water and Sanitation Survey. It also includes functions that
+    implement a Shiny application for visulasing and mapping results of the
+    survey.
+Depends: R (>= 3.1.0)
+License: AGPL-3.0
 Encoding: UTF-8
 LazyData: true
+URL: http://github.com/validmeasures/washr
+BugReports: https://github.com/validmeasures/washr/issues
+RoxygenNote: 6.0.1
