@@ -12,9 +12,15 @@ Description: Provides the necessary functions that support the design,
     implement a Shiny application for visulasing and mapping results of the
     survey.
 Depends: R (>= 3.1.0)
-License: AGPL-3.0
+Suggests:
+    devtools,
+    knitr,
+    rmarkdown,
+    testthat
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 URL: http://github.com/validmeasures/washr
 BugReports: https://github.com/validmeasures/washr/issues
 RoxygenNote: 6.0.1
+VignetteBuilder: knitr
