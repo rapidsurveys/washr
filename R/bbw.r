@@ -14,10 +14,10 @@
 #'   \item{\code{nrow :}}{replicates}
 #'   \item{\code{names :}}{outputColumns}
 #'   }
+#'
 #' @examples
 #'
-#' #Example function (estimate a proportion for a binary (0/1) variable) :
-#'
+#'    #Example function (estimate a proportion for a binary (0/1) variable):
 #'      oneP <- function(x, params) {
 #'        v1 <- params[1]
 #'        v1Data <- x[[v1]]
@@ -25,23 +25,18 @@
 #'        return(oneP)
 #'      }
 #'
-#'  #Example call to bootBW function:
+#'    #Example call to bootBW function:
 #'
-#'    require(devtools)
-#'    devtools::install_github("validmeasures/washdata")
-#'    library(washdata)
+#'      bootP <- bootBW(x = indicatorsDataBGD,
+#'                      w = popBGD,
+#'                      statistic = oneP,
+#'                      params = "nameOfVariable",
+#'                      outputColumns = "p",
+#'                      replicates = 9)
 #'
-#'    bootP <- bootBW(x = indicatorsDataBGD,
-#'                    w = popBGD,
-#'                    statistic = oneP,
-#'                    params = "nameOfVariable",
-#'                    outputColumns = "p",
-#'                    replicates = 19)
+#'    #Example estimate with 95% CI:
+#'      quantile(bootP, probs = c(0.500, 0.025, 0.975), na.rm = TRUE)
 #'
-#'  #Example estimate with 95% CI:
-#'
-#'    quantile(bootP, probs = c(0.500, 0.025, 0.975), na.rm = TRUE)
-
 bootBW <- function(x, w, statistic, params, outputColumns, replicates = 400) {
   #
   # Scale weights and accumulate weights
