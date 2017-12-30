@@ -1,4 +1,6 @@
-#' Blocked Weighted Bootstrap
+#' Blocking Weighted Bootstrap
+#'
+#'
 #'
 #' @param x A data frame with primary sampling unit (PSU) in column named \code{psu}
 #' @param w A data frame with primary sampling unit (PSU) in column named \code{psu}
@@ -9,35 +11,34 @@
 #' @param outputColumns Names of columns in output data frame
 #' @param replicates Number of bootstrap replicates
 #' @return A data frame with:
-#'   \describe{
-#'   \item{\code{ncol}}{length(outputColumns)}
-#'   \item{\code{nrow}}{replicates}
-#'   \item{\code{names}}{outputColumns}
-#'   }
-#'
+#' \describe{
+#' \item{}{\code{ncol} = length(outputColumns)}
+#' \item{}{\code{nrow} = replicates}
+#' \item{}{\code{names} = outputColumns}
+#' }
 #' @examples
 #'
-#'    #Example function (estimate a proportion for a binary (0/1) variable):
+#' # Example function (estimate a proportion for a binary (0/1) variable):
 #'
-#'      oneP <- function(x, params) {
-#'        v1 <- params[1]
-#'        v1Data <- x[[v1]]
-#'        oneP <- mean(v1Data, na.rm = TRUE)
-#'        return(oneP)
-#'      }
+#' oneP <- function(x, params) {
+#'   v1 <- params[1]
+#'   v1Data <- x[[v1]]
+#'   oneP <- mean(v1Data, na.rm = TRUE)
+#'   return(oneP)
+#' }
 #'
-#'    #Example call to bootBW function:
+#' # Example call to bootBW function:
 #'
-#'      bootP <- bootBW(x = indicatorsDataBGD,
-#'                      w = popBGD,
-#'                      statistic = oneP,
-#'                      params = "nameOfVariable",
-#'                      outputColumns = "p",
-#'                      replicates = 9)
+#' bootP <- bootBW(x = indicatorsDataBGD,
+#'                 w = popBGD,
+#'                 statistic = oneP,
+#'                 params = "nameOfVariable",
+#'                 outputColumns = "p",
+#'                 replicates = 9)
 #'
-#'    #Example estimate with 95% CI:
+#' # Example estimate with 95% CI:
 #'
-#'      quantile(bootP, probs = c(0.500, 0.025, 0.975), na.rm = TRUE)
+#' quantile(bootP, probs = c(0.500, 0.025, 0.975), na.rm = TRUE)
 #'
 bootBW <- function(x, w, statistic, params, outputColumns, replicates = 400) {
   #
