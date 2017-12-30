@@ -22,11 +22,11 @@ specified in \code{statistic}}
 \item{replicates}{Number of bootstrap replicates}
 }
 \value{
-A data.frame with:
+A data frame with:
   \describe{
-  \item{\code{ncol :}}{length(outputColumns)}
-  \item{\code{nrow :}}{replicates}
-  \item{\code{names :}}{outputColumns}
+  \item{\code{ncol}}{length(outputColumns)}
+  \item{\code{nrow}}{replicates}
+  \item{\code{names}}{outputColumns}
   }
 }
 \description{
@@ -35,6 +35,7 @@ Blocked Weighted Bootstrap
 \examples{
 
    #Example function (estimate a proportion for a binary (0/1) variable):
+
      oneP <- function(x, params) {
        v1 <- params[1]
        v1Data <- x[[v1]]
@@ -52,6 +53,7 @@ Blocked Weighted Bootstrap
                      replicates = 9)
 
    #Example estimate with 95\% CI:
+
      quantile(bootP, probs = c(0.500, 0.025, 0.975), na.rm = TRUE)
 
 }
