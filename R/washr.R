@@ -1,6 +1,6 @@
 #' \code{washr} package
 #'
-#' Urban Water and Sanitation Survey R API
+#' An Implementation of the Urban Water and Sanitation Survey in R
 #'
 #' See the README at
 #' \href{https://github.com/validmeasures/washr#readme}{GitHub}
