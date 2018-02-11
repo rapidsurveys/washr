@@ -1,7 +1,7 @@
 Package: washr
 Type: Package
 Title: Design, Implementation and Analysis of Urban Water and Sanitation Surveys
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: as.person(c(
     "Ernest Guevarra <ernestgmd@gmail.com> [aut, cre]", 
     "Valid International <office@validinternational.org> [cph]"
@@ -12,9 +12,7 @@ Description: Provides the necessary functions that support the design,
     implement a Shiny application for visulasing and mapping results of the
     survey.
 Depends: R (>= 3.1.0)
-Suggests:
-    devtools,
-    knitr,
+Suggests: knitr,
     rmarkdown,
     testthat
 License: AGPL-3
@@ -24,3 +22,5 @@ URL: http://github.com/validmeasures/washr
 BugReports: https://github.com/validmeasures/washr/issues
 RoxygenNote: 6.0.1
 VignetteBuilder: knitr
+Imports: bbw,
+    washdata
