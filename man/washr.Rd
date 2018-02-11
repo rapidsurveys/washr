@@ -6,7 +6,7 @@
 \alias{washr-package}
 \title{\code{washr} package}
 \description{
-Urban Water and Sanitation Survey R API
+An Implementation of the Urban Water and Sanitation Survey in R
 }
 \details{
 See the README at
