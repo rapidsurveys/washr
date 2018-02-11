@@ -7,7 +7,6 @@
 #'
 #' @docType package
 #' @name washr
-#' @export bootBW
 #' @importFrom stats runif
 NULL
 
